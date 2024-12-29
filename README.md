@@ -27,6 +27,28 @@ The dataset is publicly available on [data.ny.gov](https://data.ny.gov/Transport
 - **Visualization**: Create visualizations to help communicate insights from the data, including heatmaps and time-series plots.
 - **Improvement suggestions**: Based on findings, suggest possible areas for improving subway system safety and incident prevention.
 
+## Reproduce the Analysis
+
+To reproduce the analysis in this repository, follow these steps:
+
+### 1. Clone the repository
+
+First, clone this repository to your local machine:
+
+```bash
+git clone https://github.com/yourusername/yourrepository.git
+cd yourrepository
+```
+### 2. Set up the environment
+```bash
+python -m venv env
+source env/bin/activate  # On Windows, use `env\Scripts\activate`
+```
+### 3. Install the dependencies
+```bash
+pip install pandas matplotlib seaborn plotly jupyter
+```
+
 ## Files and Structure
 
 - `data/`: Folder containing the raw dataset and any processed files.
