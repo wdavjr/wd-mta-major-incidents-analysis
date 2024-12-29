@@ -30,7 +30,7 @@ Which incident categories are most common?
 How do weekday incidents differ from weekend incidents?
 What are the peak months or lines most affected by incidents?
 
-##Repository Structure
+## Repository Structure
 ```plaintext
 Copy code
 |-- data/
@@ -45,6 +45,8 @@ Copy code
 |
 |-- README.md                  # Project documentation
 |-- LICENSE.md                 # Licensing information
+```
+
 How to Reproduce the Analysis
 To run the analysis and generate the visualizations, follow these steps:
 
