@@ -1,108 +1,50 @@
-# MTA Subway Major Incidents Analysis (2020-Present)
+# MTA Subway Major Incidents Analysis
 
 ## Overview
-This project analyzes the **MTA Subway Major Incidents** dataset, focusing on delays affecting 50 or more trains from 2020 to the present. By examining trends and patterns, the goal is to uncover actionable insights that could help improve subway operations and better understand the factors contributing to disruptions.
 
-## Dataset Overview
-The dataset tracks major subway incidents, categorized into the following types:
+This repository contains an analysis of the **MTA Subway Major Incidents** dataset, which includes data on incidents occurring within the MTA subway system starting in 2020. The data is sourced from [data.ny.gov](https://data.ny.gov/Transportation/MTA-Subway-Major-Incidents-Beginning-2020/j6d2-s8m2/about_data) and provides insights into major subway incidents across New York's metropolitan area.
 
-## Track: Track-related issues (e.g., fires, broken rails).
-`Signals`: Signal failures and related issues.
-`Persons on Trackbed/Police/Medical`: Incidents involving medical emergencies, police activity, or unauthorized persons on tracks.
-`Stations and Structure`: Structural or power issues affecting stations or tracks.
-`Subway Car`: Issues related to the trains themselves (e.g., door, brake, or air conditioning failures).
-`Other`: Incidents due to external factors such as weather, vandalism, or special events.
+## General Description
 
-## The dataset includes:
+The **Metropolitan Transportation Authority (MTA)** is a public-benefit corporation responsible for managing and overseeing public transportation in New York State. It serves 12 counties in southeastern New York and two counties in southwestern Connecticut under contract with the Connecticut Department of Transportation (CDOT). The MTA operates the largest transportation network in North America, which includes a vast subway system.
 
-**Time Period:** From January 2020 to the present.
+This analysis aims to explore, visualize, and interpret the dataset of major subway incidents that have occurred since 2020. The dataset provides valuable information for identifying patterns, trends, and key factors that contribute to these incidents, with a focus on improving the safety and reliability of the subway system.
 
-**Key Variables:**
-`month`: Date of the incident.
-`division`: Subway division (A or B).
-`line`: Specific subway line affected.
-`day_type`: Weekday (1) or Weekend (2).
-`category`: Type of incident.
-`count`: Number of incidents for each month/line.
+## Data Source
 
-## Questions Addressed
+The dataset is publicly available on [data.ny.gov](https://data.ny.gov/Transportation/MTA-Subway-Major-Incidents-Beginning-2020/j6d2-s8m2/about_data) and includes the following key fields:
 
-- How do major incidents vary across different subway divisions and lines?
-- Which incident categories are most common?
-- How do weekday incidents differ from weekend incidents?
-- What are the peak months or lines most affected by incidents?
+- **Incident Date**: The date the incident occurred.
+- **Incident Location**: The location of the incident within the subway system.
+- **Cause**: The cause of the incident.
+- **Description**: A detailed description of the incident.
+- **Impact**: The severity of the incident and its impact on service.
 
-## Repository Structure
+## Goals of the Analysis
 
-```plaintext
+- **Explore the dataset**: Investigate the distribution and characteristics of incidents across time, location, and cause.
+- **Identify trends**: Examine patterns in the frequency and severity of incidents over time.
+- **Visualization**: Create visualizations to help communicate insights from the data, including heatmaps and time-series plots.
+- **Improvement suggestions**: Based on findings, suggest possible areas for improving subway system safety and incident prevention.
 
-Copy code
+## Files and Structure
 
-|-- data/
-|   |-- raw_data.csv           # Original dataset
-|   |-- cleaned_data.csv       # Preprocessed dataset
-|
-|-- notebooks/
-|   |-- data_analysis.ipynb    # Jupyter notebook for analysis
-|
-|-- visuals/
-|   |-- incident_trends.png    # Key visualizations
-|
-|-- README.md                  # Project documentation
-|-- LICENSE.md                 # Licensing information
-```
+- `data/`: Folder containing the raw dataset and any processed files.
+- `analysis/`: Folder with Jupyter notebooks or Python scripts performing the analysis.
+- `visualizations/`: Folder with images or interactive plots generated during the analysis.
+- `README.md`: This file.
 
-How to Reproduce the Analysis
-To run the analysis and generate the visualizations, follow these steps:
+## Requirements
 
-1. Clone the Repository
-Start by cloning this repository to your local machine:
+To run the code and analysis in this repository, you'll need the following Python libraries:
 
-bash
-Copy code
-git clone https://github.com/yourusername/mta-subway-incidents.git
-cd mta-subway-incidents
+- `pandas`
+- `matplotlib`
+- `seaborn`
+- `plotly`
+- `jupyter`
 
-2. Install Dependencies
-Ensure you have Python 3.7 or later installed. You can install the required dependencies using pip:
+You can install the required packages by running:
 
-bash
-Copy code
+```bash
 pip install -r requirements.txt
-The requirements.txt file includes the following key packages:
-
-`pandas` - For data manipulation.
-`matplotlib` - For data visualization.
-`seaborn` - For advanced visualizations.
-`jupyter` - For running Jupyter notebooks.
-
-3. Data Preparation
-The raw dataset (data/raw_data.csv) is already included in the repository. If you wish to update the data, download the latest version from the source and place it in the data/ directory. The preprocessing script (data_analysis.ipynb) will handle cleaning and transformation.
-
-4. Run the Analysis
-Open the Jupyter notebook to perform the analysis:
-
-bash
-Copy code
-jupyter notebook notebooks/data_analysis.ipynb
-Follow the steps in the notebook to load the data, clean it, and generate insights.
-
-5. Visualizations
-After running the analysis, visualizations will be saved in the visuals/ directory (e.g., incident_trends.png). You can modify the analysis or add new visualizations as needed.
-
-Data Collection
-Incident data is entered manually by train dispatchers into the Integrated Train Register Activity Console (I-TRAC), which tracks delays and assigns them to specific incidents. The dataset is updated monthly, and delays are categorized based on the dispatcher’s judgment, though multiple incidents can affect the same train.
-
-Note on Data Limitations
-Data from March and April 2020 may not fully represent the usual service due to the COVID-19 pandemic and subsequent schedule changes.
-Incident categories are based on dispatcher assessments and may not always reflect the exact cause of delays.
-Data Dictionary
-Data Label	Data Type	Description
-month	DATE	The month when the incident occurred (yyyy-mm).
-division	TEXT	The subway division (A or B).
-line	TEXT	The specific subway line affected.
-day_type	NUMERIC	1 for weekdays, 2 for weekends.
-category	TEXT	The type of incident (Track, Signals, etc.).
-count	NUMERIC	Number of major incidents for that month and subway line.
-Release Notes
-Version 1.0.0: Initial dataset release with system-wide rows removed (11/13/2024).
