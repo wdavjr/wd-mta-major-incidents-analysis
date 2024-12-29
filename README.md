@@ -1,38 +1,43 @@
 # MTA Subway Major Incidents Analysis (2020-Present)
+
 ## Overview
-This project analyzes the MTA Subway Major Incidents dataset, focusing on delays affecting 50 or more trains from 2020 to the present. By examining trends and patterns, the goal is to uncover actionable insights that could help improve subway operations and better understand the factors contributing to disruptions.
+This project analyzes the **MTA Subway Major Incidents** dataset, focusing on delays affecting 50 or more trains from 2020 to the present. By examining trends and patterns, the goal is to uncover actionable insights that could help improve subway operations and better understand the factors contributing to disruptions.
 
 ## Dataset Overview
 The dataset tracks major subway incidents, categorized into the following types:
 
 ## Track: Track-related issues (e.g., fires, broken rails).
-Signals: Signal failures and related issues.
-Persons on Trackbed/Police/Medical: Incidents involving medical emergencies, police activity, or unauthorized persons on tracks.
-Stations and Structure: Structural or power issues affecting stations or tracks.
-Subway Car: Issues related to the trains themselves (e.g., door, brake, or air conditioning failures).
-Other: Incidents due to external factors such as weather, vandalism, or special events.
+`Signals`: Signal failures and related issues.
+`Persons on Trackbed/Police/Medical`: Incidents involving medical emergencies, police activity, or unauthorized persons on tracks.
+`Stations and Structure`: Structural or power issues affecting stations or tracks.
+`Subway Car`: Issues related to the trains themselves (e.g., door, brake, or air conditioning failures).
+`Other`: Incidents due to external factors such as weather, vandalism, or special events.
 
 ## The dataset includes:
 
-Time Period: From January 2020 to the present.
-Key Variables:
-month: Date of the incident.
-division: Subway division (A or B).
-line: Specific subway line affected.
-day_type: Weekday (1) or Weekend (2).
-category: Type of incident.
-count: Number of incidents for each month/line.
-Key Questions
-This analysis addresses questions such as:
+**Time Period:** From January 2020 to the present.
 
-How do major incidents vary across different subway divisions and lines?
-Which incident categories are most common?
-How do weekday incidents differ from weekend incidents?
-What are the peak months or lines most affected by incidents?
+**Key Variables:**
+`month`: Date of the incident.
+`division`: Subway division (A or B).
+`line`: Specific subway line affected.
+`day_type`: Weekday (1) or Weekend (2).
+`category`: Type of incident.
+`count`: Number of incidents for each month/line.
+
+## Questions Addressed
+
+- How do major incidents vary across different subway divisions and lines?
+- Which incident categories are most common?
+- How do weekday incidents differ from weekend incidents?
+- What are the peak months or lines most affected by incidents?
 
 ## Repository Structure
+
 ```plaintext
+
 Copy code
+
 |-- data/
 |   |-- raw_data.csv           # Original dataset
 |   |-- cleaned_data.csv       # Preprocessed dataset
@@ -57,6 +62,7 @@ bash
 Copy code
 git clone https://github.com/yourusername/mta-subway-incidents.git
 cd mta-subway-incidents
+
 2. Install Dependencies
 Ensure you have Python 3.7 or later installed. You can install the required dependencies using pip:
 
@@ -65,10 +71,11 @@ Copy code
 pip install -r requirements.txt
 The requirements.txt file includes the following key packages:
 
-pandas - For data manipulation.
-matplotlib - For data visualization.
-seaborn - For advanced visualizations.
-jupyter - For running Jupyter notebooks.
+`pandas` - For data manipulation.
+`matplotlib` - For data visualization.
+`seaborn` - For advanced visualizations.
+`jupyter` - For running Jupyter notebooks.
+
 3. Data Preparation
 The raw dataset (data/raw_data.csv) is already included in the repository. If you wish to update the data, download the latest version from the source and place it in the data/ directory. The preprocessing script (data_analysis.ipynb) will handle cleaning and transformation.
 
